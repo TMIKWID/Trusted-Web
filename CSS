@@ -1,0 +1,70 @@
+html,body{
+    height: 200%;
+}
+
+.page-title{
+    font-family:"El Messiri", serif ;
+    font-style: normal;
+    font-size: 50px;
+}
+body {
+    padding: 10px;
+    background: linear-gradient(105deg,#ffffff7d,#000000,#240185)fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.intro{
+    transform: translate(0px,0px), scale(1);
+    transition: transform 0.7s ease-out, color 0.5s ease-out;
+    font-family:"Red Rose",serif;
+    font-style: normal; 
+    font-weight:200;
+    color:rgb(139, 139, 139);
+}
+.intro:hover{
+    transition: 0.7s;
+    transform: translate(300px,0px) scale(1.5);
+    color: rgb(255, 255, 255)
+    
+}
+#Discord_Button a{
+    text-decoration: none;
+}
+#Discord_Button{
+    opacity: 0.0;
+    transform:translate(0px,0px) scale(1);
+    transition: transform 1.5s ease-out ,opacity 1s ease-out;
+    padding: 10px;
+    width: 120px;
+    height: 50px;
+    border-radius: 50px;
+    border: 1px;
+    background-color: aliceblue;
+    font-family: "Oxanium",serif;
+    color: rgb(67, 7, 109);
+    
+
+}
+#Discord_Button:hover{
+    transition: 0.6s;
+    opacity: 1;
+    transform: translate(20px,2px) scale(1.5)
+}
+.main-info{
+    font-family: "Red Rose",serif;
+    font-size: 130%;
+    font-weight: 400;
+    color:rgb(255, 232, 232);
+}
+.body-info{
+    width: 800px;
+    height: 70px;
+    padding: 7px;
+    border: 10px;
+    border-color: black;
+    background: linear-gradient(90deg,rgba(42, 42, 43, 0),rgba(255, 255, 255, 0.5),rgb(255, 255, 255));
+    border-radius: 90px;
+    font-family: "Oxanium",serif;
+}
+
