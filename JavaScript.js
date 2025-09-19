@@ -1,16 +1,44 @@
-<script>
-  let slideIndex = 0;
-  const slides = document.getElementsByClassName("slide");
+//alert("Welcome to Trusted Web!");
+function changeText() {
+  document.getElementById("greeting").innerText = "Welcome to Trusted Web!";
+}
+const glow = document.querySelector('.glow');
 
-  function showSlides() {
-    for (let i = 0; i < slides.length; i++) {
-      slides[i].style.opacity = 0;
+document.addEventListener('mousemove', (e) => {
+  glow.style.left = `${e.clientX}px`;
+  glow.style.top = `${e.clientY}px`;
+});
+
+
+const box = document.getElementById("discordlink");
+let hovering = false;
+let toggled = false; // track text state
+
+// Save original text
+const originalText = box.textContent;
+
+// Track hover state
+box.addEventListener("mouseenter", () => hovering = true);
+box.addEventListener("mouseleave", () => hovering = false);
+
+// Listen for keypress
+document.addEventListener("keydown", (event) => {
+  if (hovering && event.ctrlKey && event.key === "d") {
+    event.preventDefault(); // stops browser bookmark shortcut
+
+    // Toggle text
+    if (!toggled) {
+      box.textContent = "Text Changed!";
+    } else {
+      box.textContent = originalText;
     }
-    slideIndex++;
-    if (slideIndex > slides.length) { slideIndex = 1; }
-    slides[slideIndex - 1].style.opacity = 1;
-    setTimeout(showSlides, 3000); // Change image every 3 seconds
-  }
 
-  window.onload = showSlides;
-</script>
+    // Animate
+    box.classList.add("animate-text");
+    setTimeout(() => box.classList.remove("animate-text"), 600);
+
+    // Flip state
+    toggled = !toggled;
+  }
+});
+
